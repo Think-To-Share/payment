@@ -1,0 +1,5 @@
+providers:
+  - ThinkToShare\Payment\PaymentServiceProvider
+
+migrations:
+  - database/migrations
