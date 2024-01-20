@@ -12,7 +12,7 @@ enum Gateway: string
         return match ($this) {
             Gateway::CASHFREE => 'cashfreePayment',
             Gateway::CCAVENUE => 'ccavenuePayment',
-            Gateway::SABPAISA => 'sbpaisaPayment',
+            Gateway::SABPAISA => 'sabpaisaPayment',
         };
     }
 }

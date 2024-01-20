@@ -33,7 +33,7 @@ class PaymentData extends Data
         public readonly ?string $bankTxnld,
         public readonly ?string $programld,
         public readonly ?int $mcc,
-        #[WithCast(DateTimeInterfaceCast::class, type: CarbonImmutable::class, format: ['D M d H:i:s T Y', 'Y-m-d H:i:s.v'])]
+        #[WithCast(DateTimeInterfaceCast::class, type: CarbonImmutable::class, format: ['D M d H:i:s T Y', 'Y-m-d H:i:s.v', 'Y-m-d\TH:i:sp'])]
         public readonly CarbonImmutable $transDate,
         public readonly ?string $udf1,
         public readonly ?string $udf2,
