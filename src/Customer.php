@@ -55,7 +55,7 @@ class Customer implements Arrayable, Jsonable
         return $this;
     }
 
-    public function getSubPaisaAttributes(): array
+    public function getSabPaisaAttributes(): array
     {
         return [
             'payerName' => $this->name,

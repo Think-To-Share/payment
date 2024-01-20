@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use ThinkToShare\Payment\DataObjects\SabPaisa\PaymentData;
 
-class SubpaisaPayment extends Model
+class SabpaisaPayment extends Model
 {
     use HasFactory;
 

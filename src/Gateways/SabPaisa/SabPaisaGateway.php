@@ -13,7 +13,7 @@ use ThinkToShare\Payment\Contracts\Gateway;
 use ThinkToShare\Payment\Customer;
 use ThinkToShare\Payment\Enums\Gateway as GatewayEnum;
 use ThinkToShare\Payment\Factory\PaymentFactory;
-use ThinkToShare\Payment\Models\SubpaisaPayment;
+use ThinkToShare\Payment\Models\SabpaisaPayment;
 use ThinkToShare\Payment\Utils\QueryString;
 
 class SabPaisaGateway implements Gateway
@@ -47,7 +47,7 @@ class SabPaisaGateway implements Gateway
 
         $data = $this->collectPaymentData($payment, $customer);
 
-        SubpaisaPayment::create([
+        SabpaisaPayment::create([
             'payment_id' => $payment->id,
             'enc_data' => $this->prepareEncryptedData($data),
         ]);
@@ -57,8 +57,8 @@ class SabPaisaGateway implements Gateway
 
     public function redirectView(Payment $payment): View
     {
-        return view('payment::subpaisa.redirect')->with([
-            'data' => $payment->subpaisaPayment->enc_data,
+        return view('payment::sabpaisa.redirect')->with([
+            'data' => $payment->sabpaisaPayment->enc_data,
             'clientCode' => $this->config['client_code']
         ]);
     }
@@ -69,7 +69,7 @@ class SabPaisaGateway implements Gateway
 
         $payment = $this->paymentFactory->fromOrderId($payment_data->clientTxnId);
 
-        $payment->subpaisaPayment->update([
+        $payment->sabpaisaPayment->update([
              'trans_date' => $payment_data->transDate,
              'status' => $payment_data->status,
              'sabpaisaTxnId' =>$payment_data->sabpaisaTxnId,
@@ -93,7 +93,7 @@ class SabPaisaGateway implements Gateway
             'channelId' => 'W',
             'callbackUrl' => url($this->config['callbackUrl']),
 
-            ...$customer->getSubPaisaAttributes(),
+            ...$customer->getSabPaisaAttributes(),
         ];
     }
 

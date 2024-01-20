@@ -24,9 +24,9 @@ class Payment extends Model
         return $this->morphTo();
     }
 
-    public function subpaisaPayment(): HasOne
+    public function sabpaisaPayment(): HasOne
     {
-        return $this->hasOne(SubpaisaPayment::class);
+        return $this->hasOne(SabpaisaPayment::class);
     }
 
     public function ccavenuePayment(): HasOne

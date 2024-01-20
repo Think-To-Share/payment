@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('subpaisa_payments', function (Blueprint $table) {
+        Schema::create('sabpaisa_payments', function (Blueprint $table) {
             $table->id();
             $table->foreignId('payment_id')->constrained();
             $table->string('sabpaisaTxnId')->nullable();
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('subpaisa_payments');
+        Schema::dropIfExists('sabpaisa_payments');
     }
 };
