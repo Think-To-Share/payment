@@ -150,7 +150,7 @@ class SabPaisaGateway implements Gateway
 
     public function getCustomer(Payment $payment): Customer
     {
-        /** @var WHdata $data */
+        /** @var \ThinkToShare\Payment\DataObjects\SabPaisa\PaymentData $data */
         $data = $payment->gatewayModel->data;
 
         return Customer::create()

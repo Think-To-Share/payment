@@ -142,7 +142,7 @@ class CcAvenueGateway implements Gateway
 
     public function getCustomer(Payment $payment): Customer
     {
-        /** @var WHdata $data */
+        /** @var \ThinkToShare\Payment\DataObjects\CcAvenue\PaymentData $data */
         $data = $payment->gatewayModel->data;
 
         return Customer::create()

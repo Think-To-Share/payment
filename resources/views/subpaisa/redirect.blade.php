@@ -1,4 +1,4 @@
-<form name="redirect" action="{{ Modules\Payment\Gateways\SabPaisa\SabPaisaGateway::getPaymentUrl() }}" method="post">
+<form name="redirect" action="{{ ThinkToShare\Payment\Gateways\SabPaisa\SabPaisaGateway::getPaymentUrl() }}" method="post">
     <input type="hidden" name="encData" value="{{ $data }}" id="frm1">
     <input type="hidden" name="clientCode" value ="{{ $clientCode }}" id="frm2">
 </form>

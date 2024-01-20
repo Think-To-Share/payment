@@ -22,6 +22,8 @@ class PaymentServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../resources/views' => resource_path('views/vendor/payment'),
         ]);
+
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
     }
 
     public function register()
