@@ -15,6 +15,6 @@ Items include but are not limited to: digital goods, source codes of programs, d
 - Use this item for commercial usage without prior written consent from the [Your Name or Company Name] 
 
 ### INFRINGEMENT
-Unlawful infringement of [Your Name or Company Name]'s work may lead to prosecution 
+Unlawful infringement of Think To Share IT Solutions PVT LTD's work may lead to prosecution 
 
 By using any part of the Item, you agree to the above terms.
