@@ -12,7 +12,7 @@ Items include but are not limited to: digital goods, source codes of programs, d
 
 ### YOU ARE NOT ALLOWED TO:
 - Sublicense, resell, redistribute, or provide access to these Items for commercial purposes, either in its original form or as a modified resource to any third party. 
-- Use this item for commercial usage without prior written consent from the [Your Name or Company Name] 
+- Use this item for commercial usage without prior written consent from the Think To Share IT Solutions PVT LTD 
 
 ### INFRINGEMENT
 Unlawful infringement of Think To Share IT Solutions PVT LTD's work may lead to prosecution 
