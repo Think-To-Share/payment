@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('order_id')->nullable();
             $table->float('order_amount', 10, 2)->nullable();
             $table->string('gateway')->nullable();
+            $table->string('status');
             $table->morphs('resource');
             $table->timestamps();
         });

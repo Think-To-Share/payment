@@ -17,7 +17,8 @@ enum PaymentStatus: string
         return match ($this) {
             self::SUCCESS => GenericStatus::SUCCESS,
             self::FAILURE => GenericStatus::FAILED,
-            self::INVALID, self::ABORTED, self::TIMEOUT => GenericStatus::EXTRA,
+            self::ABORTED => GenericStatus::ABORTED,
+            self::INVALID, self::TIMEOUT => GenericStatus::EXTRA,
         };
     }
 }

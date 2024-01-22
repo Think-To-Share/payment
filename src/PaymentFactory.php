@@ -1,9 +1,9 @@
 <?php
 
-namespace ThinkToShare\Payment\Factory;
+namespace ThinkToShare\Payment;
 
+use ThinkToShare\Payment\Enums\PaymentStatus;
 use ThinkToShare\Payment\Models\Payment;
-use ThinkToShare\Payment\Customer;
 use ThinkToShare\Payment\Enums\Gateway;
 
 class PaymentFactory
@@ -14,6 +14,7 @@ class PaymentFactory
             'order_id' => $order_id,
             'order_amount' => $amount,
             'gateway' => $gateway,
+            'status' => PaymentStatus::PENDING,
             'resource_id' => $customer->model->getKey(),
             'resource_type' => $customer->model->getMorphClass(),
         ]);
@@ -28,5 +29,21 @@ class PaymentFactory
         }
 
         return $payment;
+    }
+
+    public function syncGatewayStatus(Payment $payment): Payment
+    {
+        $gatewayModel = $payment->gatewayModel->refresh();
+
+        return $this->updateStatus($payment, $gatewayModel->status->getGenericStatus());
+    }
+
+    public function updateStatus(Payment $payment, PaymentStatus $status): Payment
+    {
+        $payment->update([
+            'status' => $status,
+        ]);
+
+        return $payment->refresh();
     }
 }

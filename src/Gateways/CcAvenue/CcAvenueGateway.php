@@ -12,7 +12,7 @@ use ThinkToShare\Payment\Concerns\HasPaymentUrl;
 use ThinkToShare\Payment\Contracts\Gateway;
 use ThinkToShare\Payment\Customer;
 use ThinkToShare\Payment\Enums\Gateway as GatewayEnum;
-use ThinkToShare\Payment\Factory\PaymentFactory;
+use ThinkToShare\Payment\PaymentFactory;
 use ThinkToShare\Payment\Models\CcavenuePayment;
 use ThinkToShare\Payment\Utils\QueryString;
 
@@ -78,6 +78,8 @@ class CcAvenueGateway implements Gateway
             'service_tax' => $payment_data->service_tax,
             'data' => $payment_data,
        ]);
+
+        $this->paymentFactory->syncGatewayStatus($payment);
 
        return $payment->fresh();
     }

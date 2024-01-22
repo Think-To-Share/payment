@@ -12,7 +12,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use ThinkToShare\Payment\Contracts\Gateway;
 use ThinkToShare\Payment\Customer;
-use ThinkToShare\Payment\Factory\PaymentFactory;
+use ThinkToShare\Payment\PaymentFactory;
 use Cashfree\Model\WHdata;
 use Cashfree\ObjectSerializer;
 use ThinkToShare\Payment\Enums\Gateway as GatewayEnum;
@@ -86,6 +86,8 @@ class CashfreeGateway implements Gateway
             'payment_phone' => $wh_data->getCustomerDetails()->getCustomerPhone(),
             'data' => $wh_data,
         ]);
+
+        $this->paymentFactory->syncGatewayStatus($payment);
 
         return $payment;
     }

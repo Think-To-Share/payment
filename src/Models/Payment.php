@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use ThinkToShare\Payment\Enums\Gateway;
 use Illuminate\Database\Eloquent\Casts\Attribute;
+use ThinkToShare\Payment\Enums\PaymentStatus;
 
 class Payment extends Model
 {
@@ -16,6 +17,7 @@ class Payment extends Model
 
     protected $casts = [
         'order_amount' => 'float',
+        'status' => PaymentStatus::class,
         'gateway' => Gateway::class,
     ];
 

@@ -12,7 +12,7 @@ use ThinkToShare\Payment\Concerns\HasPaymentUrl;
 use ThinkToShare\Payment\Contracts\Gateway;
 use ThinkToShare\Payment\Customer;
 use ThinkToShare\Payment\Enums\Gateway as GatewayEnum;
-use ThinkToShare\Payment\Factory\PaymentFactory;
+use ThinkToShare\Payment\PaymentFactory;
 use ThinkToShare\Payment\Models\SabpaisaPayment;
 use ThinkToShare\Payment\Utils\QueryString;
 
@@ -76,6 +76,8 @@ class SabPaisaGateway implements Gateway
              'amount' => $payment_data->paidAmount,
              'data' => $payment_data,
         ]);
+
+        $this->paymentFactory->syncGatewayStatus($payment);
 
         return $payment->fresh();
     }
@@ -141,6 +143,8 @@ class SabPaisaGateway implements Gateway
             'status' => $payment_data->status,
             'enquiry_data' => $payment_data,
         ]);
+
+        $this->paymentFactory->syncGatewayStatus($payment);
     }
 
     public function webhook(Request $request)

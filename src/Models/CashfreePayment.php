@@ -7,6 +7,7 @@ use Cashfree\ObjectSerializer;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Casts\Attribute;
+use ThinkToShare\Payment\Enums\Cashfree\PaymentStatus;
 
 class CashfreePayment extends Model
 {
@@ -17,6 +18,7 @@ class CashfreePayment extends Model
     protected $casts = [
         'payment_time' => 'datetime',
         'order_amount' => 'float',
+        'status' => PaymentStatus::class,
         'payment_amount' => 'float',
         'data' => 'array'
     ];
@@ -31,7 +33,7 @@ class CashfreePayment extends Model
             set: function ($value) {
                 return [
                     'data' => json_encode($value),
-                ];   
+                ];
             }
         );
     }
