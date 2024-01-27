@@ -143,7 +143,7 @@ class SabPaisaGateway implements Gateway
         $payment->gatewayModel->update([
             'trans_date' => $payment_data->transDate,
             'status' => $payment_data->status,
-            'enquiry_data' => $payment_data,
+            'data' => $payment_data,
         ]);
 
         $this->paymentFactory->syncGatewayStatus($payment);

@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('status')->nullable();
             $table->longText('enc_data')->nullable();
             $table->json('data')->nullable();
-            $table->json('enquiry_data')->nullable();
             $table->timestamps();
         });
     }

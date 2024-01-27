@@ -19,7 +19,6 @@ class SabpaisaPayment extends Model
         'amount' => 'float',
         'status' => PaymentStatus::class,
         'data' => PaymentData::class,
-        'enquiry_data' => PaymentData::class,
     ];
 
     public function payment(): BelongsTo

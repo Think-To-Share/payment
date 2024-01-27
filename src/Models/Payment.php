@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 use ThinkToShare\Payment\Enums\Gateway;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use ThinkToShare\Payment\Enums\PaymentStatus;
+use ThinkToShare\Payment\Facades\Payment as PaymentFacade;
 
 class Payment extends Model
 {
@@ -39,6 +40,11 @@ class Payment extends Model
     public function cashfreePayment(): HasOne
     {
         return $this->hasOne(CashfreePayment::class);
+    }
+
+    public function enquire(): static
+    {
+        return PaymentFacade::gateway($this->gateway)->enquirePayment($this);
     }
 
     protected function gatewayModel(): Attribute
