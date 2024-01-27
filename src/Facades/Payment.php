@@ -10,6 +10,7 @@ use ThinkToShare\Payment\Contracts\Gateway;
  * @method static \ThinkToShare\Payment\Contracts\Gateway gateway(string|null $name = null)
  * @method static \Illuminate\Contracts\View\View redirectView(\ThinkToShare\Payment\Models\Payment $payment)
  * @method static \ThinkToShare\Payment\Customer getCustomer(\ThinkToShare\Payment\Models\Payment $payment)
+ * @method static \ThinkToShare\Payment\Models\Payment enquirePayment(\ThinkToShare\Payment\Models\Payment $payment)
  *
  * @see \ThinkToShare\Payment\Contracts\Gateway
  */

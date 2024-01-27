@@ -65,7 +65,7 @@ class CashfreeGateway implements Gateway
         ]);
     }
 
-    public function enquirePayment(Payment $payment)
+    public function enquirePayment(Payment $payment): Payment
     {
         throw new NotSupportedMethodException('EnquirePayment', 'Cashfree');
     }

@@ -15,7 +15,7 @@ interface Gateway
 
     public function redirectView(Payment $payment): View;
 
-    public function enquirePayment(Payment $payment);
+    public function enquirePayment(Payment $payment): Payment;
 
     public function webhook(Request $request);
 

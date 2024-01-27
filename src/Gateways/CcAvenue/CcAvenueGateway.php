@@ -84,7 +84,7 @@ class CcAvenueGateway implements Gateway
        return $payment->fresh();
     }
 
-    public function enquirePayment(Payment $payment)
+    public function enquirePayment(Payment $payment): Payment
     {
         $data = [
             'reference_no' => $payment->ccavenuePayment->tracking_id,

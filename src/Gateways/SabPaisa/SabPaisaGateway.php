@@ -122,7 +122,7 @@ class SabPaisaGateway implements Gateway
     }
 
 
-    public function enquirePayment(Payment $payment): void
+    public function enquirePayment(Payment $payment): Payment
     {
         $data = [
             'clientCode' => $this->config['client_code'],
@@ -147,6 +147,8 @@ class SabPaisaGateway implements Gateway
         ]);
 
         $this->paymentFactory->syncGatewayStatus($payment);
+
+        return $payment->refresh();
     }
 
     public function webhook(Request $request)
