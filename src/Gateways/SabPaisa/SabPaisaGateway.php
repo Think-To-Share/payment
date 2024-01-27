@@ -116,6 +116,8 @@ class SabPaisaGateway implements Gateway
             iv: $iv,
         );
 
+        //dd(QueryString::queryToArray($decText));
+
         return PaymentData::from(QueryString::queryToArray($decText));
     }
 

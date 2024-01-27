@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use ThinkToShare\Payment\DataObjects\SabPaisa\PaymentData;
+use ThinkToShare\Payment\Enums\SabPaisa\PaymentStatus;
 
 class SabpaisaPayment extends Model
 {
@@ -16,6 +17,7 @@ class SabpaisaPayment extends Model
     protected $casts = [
         'trans_date' => 'datetime',
         'amount' => 'float',
+        'status' => PaymentStatus::class,
         'data' => PaymentData::class,
         'enquiry_data' => PaymentData::class,
     ];
