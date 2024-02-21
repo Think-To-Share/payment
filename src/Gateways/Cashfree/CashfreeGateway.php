@@ -78,7 +78,7 @@ class CashfreeGateway implements Gateway
 
         $payment->gatewayModel->update([
             'order_amount' => $wh_data->getOrder()->getOrderAmount(),
-            'payment_status' => $wh_data->getPayment()->getPaymentStatus(),
+            'status' => $wh_data->getPayment()->getPaymentStatus(),
             'payment_amount' => $wh_data->getPayment()->getPaymentAmount(),
             'payment_time' => $wh_data->getPayment()->getPaymentTime(),
             'payment_mode' => $wh_data->getPayment()->getPaymentGroup(),
