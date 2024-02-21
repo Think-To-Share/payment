@@ -96,7 +96,7 @@ class CashfreeGateway implements Gateway
     {
         /** @var OrderMeta $order_meta */
         $order_meta = (new CreateOrderRequestOrderMeta())
-            ->setReturnUrl(url($this->config['return_url']));
+            ->setReturnUrl(url("{$this->config['return_url']}?order_id={$payment->order_id}"));
 
         $order = (new CreateOrderRequest())
             ->setOrderAmount($payment->order_amount)
