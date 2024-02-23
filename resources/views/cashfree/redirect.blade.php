@@ -8,7 +8,7 @@
     <script>
 
     const cashfree = Cashfree({
-        mode:"sandbox" //or production
+        mode:"{{ config('payment.sandbox',false) ? 'sandbox' : 'production' }}" //sandbox or production
     });
 
     let checkoutOptions = {
