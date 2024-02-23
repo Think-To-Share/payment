@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('payment_id')->constrained();
             $table->float('order_amount', 10, 2)->nullable();
-            $table->string('payment_status')->nullable();
+            $table->string('status')->nullable();
             $table->float('payment_amount', 10, 2)->nullable();
             $table->dateTime('payment_time')->nullable();
             $table->string('payment_mode')->nullable();
