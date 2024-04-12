@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'default' => 'sabpaisa',
+    'default' => env('DEFAULT_PAYMENT_GATEWAY','sabpaisa'),
 
     'gateways' => [
         'sabpaisa' => [
