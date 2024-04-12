@@ -23,7 +23,7 @@ class PaymentServiceProvider extends ServiceProvider
             __DIR__.'/../resources/views' => resource_path('views/vendor/payment'),
         ]);
 
-        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->publishesMigration([__DIR__.'/../database/migrations' => database_path('migrations')],'payment-migrations');
     }
 
     public function register()
